@@ -1,35 +1,28 @@
 import { Component } from '@angular/core';
-
+import { Router } from '@angular/router';
+import { Storage } from '@ionic/storage-angular';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
-  slides = [
+  alertButtons = [
     {
-      title: "Titulo 1",
-      descripcion : "lorem impusn",
-      image: "../../assets/images/1.png",
-      help_text : "Para mas información llamar a ...",
-      class: "slide-1"
-    },
-    {
-      title: "Titulo 2",
-      descripcion : "lorem impusn",
-      image: "../../assets/images/1.png",
-      help_text : "Para mas información llamar a ...",
-      class: "slide-2"
-    },
-    {
-      title: "Titulo 3",
-      descripcion : "lorem impusn",
-      image: "../../assets/images/1.png",
-      help_text : "Para mas información llamar a ...",
-      class: "slide-3"
+      text: 'Ir',
+      handler: () => {
+        this.router.navigateByUrl("/intro");
+      }
     }
-  ]
-  constructor() {}
+  ];
+  constructor(
+    private router: Router,
+    private storage: Storage
+    ) {}
 
+    goToIntro( ){
+      console.log("Botón");
+      this.router.navigateByUrl("/intro");
+      this.storage.set('mostreLaIntro',true);
+    }
 }

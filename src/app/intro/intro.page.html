@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Introducción
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <swiper-container
+  [loop]="false"
+  [pagination]="true"
+  [slidesPerView]="1">
+    <swiper-slide *ngFor="let slide of slides">
+      <div class="{{slide.class}}">
+        <h1>{{slide.title}}</h1>
+        <img src="{{slide.image}}" />
+        <p>{{slide.descripcion}}</p>
+      </div>
+    </swiper-slide>
+  </swiper-container>
+</ion-content>
+
+<ion-button (click)="goToHome()">Ir al Home</ion-button>

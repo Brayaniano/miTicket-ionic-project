@@ -1,0 +1,22 @@
+swiper-container{
+    width: 100%;
+    height: 100%;
+  }
+  
+  swiper-slide{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .slide-1{
+    background-color: #470808;
+    text-align: center;
+  }
+  .slide-1 img{
+    width: 80%;
+  }
+  .slide-1 p{
+    width: 100%;
+    padding: 0% 10% 0 10%;
+  }

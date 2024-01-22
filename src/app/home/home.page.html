@@ -12,17 +12,19 @@
       <ion-title size="large">Blank</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <swiper-container
-  [loop]="false"
-  [pagination]="true"
-  [slidesPerView]="1">
-    <swiper-slide *ngFor="let slide of slides">
-      <div class="{{slide.class}}">
-        <h1>{{slide.title}}</h1>
-        <img src="{{slide.image}}" />
-        <p>{{slide.descripcion}}</p>
-      </div>
-    </swiper-slide>
-  </swiper-container>
-</ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Mi Ticket</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Bienvenido a la app donde podras comprar tús tickets de forma rapida, comoda y seguda. Sin complicaciones, conoce nuestra introducción
+    </ion-card-content>
+  </ion-card>
+  <ion-button id="present-alert">Introducción</ion-button>
+  <ion-alert
+    trigger="present-alert"
+    header="Bienvenido a Mi Ticket"
+    message="A continuación podrás continuar a nuestra introducción"
+    [buttons]="alertButtons"
+  ></ion-alert>

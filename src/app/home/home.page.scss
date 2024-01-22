@@ -25,17 +25,8 @@
 #container a {
   text-decoration: none;
 }
-swiper-container{
+#present-alert{
+  text-align: center;
   width: 100%;
-  height: 100%;
-}
-
-swiper-slide{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.slide-1{
-  background-color: #470808;
+  padding: 0% 10% 0 10%;
 }
