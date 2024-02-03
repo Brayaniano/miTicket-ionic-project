@@ -7,7 +7,7 @@ import { Storage } from '@ionic/storage-angular';
   templateUrl: './intro.page.html',
   styleUrls: ['./intro.page.scss'],
 })
-export class IntroPage implements OnInit {
+export class IntroPage  {
 
   slides = [
     {
@@ -36,12 +36,13 @@ export class IntroPage implements OnInit {
   ) { }
 
   goToHome( ){
-    console.log("Botón");
     this.router.navigateByUrl("/home");
-    this.storage.set('mostreLaIntro',true);
+    //this.storage.set('mostreLaIntro',true);
   }
 
-  ngOnInit() {
-  }
+    ionViewDidEnter(){
+      console.log("cargue el intro");
+      this.storage.set('mostreLaIntro',true);
+    }
 
 }

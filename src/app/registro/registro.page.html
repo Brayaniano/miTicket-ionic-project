@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-button (click)="goToLogin()">Volver</ion-button>
+    </ion-buttons>
+    <ion-title>registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <figure class="ion-text-center">
+    <ion-avatar class="center-avatar">
+      <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" class="ion-align-items-center"/>
+    </ion-avatar>
+  </figure>
+  <form [formGroup]="registroForm">
+    <ion-item>
+      <ion-input label="Email" labelPlacement="floating" placeholder="Email" formControlName="email"></ion-input>
+    </ion-item>
+    <div class="validation-message">
+      <ng-container>
+        <div>
+        
+        </div>
+      </ng-container>
+    </div>
+    <ion-item>
+      <ion-input label="Nombre" labelPlacement="floating" placeholder="Nombre" formControlName="name"></ion-input>
+    </ion-item>
+    <div class="validation-message">
+      
+    </div>
+    <ion-item>
+      <ion-input label="Apellido" labelPlacement="floating" placeholder="Apellido" formControlName="last_name"></ion-input>
+    </ion-item>
+    <div class="validation-message">
+      <ng-container *ngFor="let validation of validation_messages.last_name">
+        <div *ngIf="
+    (registroForm.get('last_name')?.hasError('required') || 
+     registroForm.get('last_name')?.hasError('minlength')) &&
+    (registroForm.get('last_name')?.dirty || registroForm.get('last_name')?.touched)
+  ">
+          {{validation.message}}
+        </div>
+      </ng-container>
+    </div>
+    <ion-item>
+      <ion-input label="Password" labelPlacement="floating" placeholder="Password" formControlName="password" type="password"></ion-input>
+    </ion-item>
+    <div class="validation-message">
+      <ng-container>
+        <div>
+        
+        </div>
+      </ng-container>
+    </div>
+    <ion-item>
+      <ion-input label="Confirmar Password" labelPlacement="floating" placeholder="Confirmar Password" formControlName="confirmation_password" type="password"></ion-input>
+    </ion-item>
+    <div class="validation-message">
+      <ng-container>
+        <div>
+        
+        </div>
+      </ng-container>
+    </div>
+    <ion-button
+    type="submit"
+    shape="round"
+    expand="full">
+      Registrar
+    </ion-button>
+  </form>
+<ion-content>
